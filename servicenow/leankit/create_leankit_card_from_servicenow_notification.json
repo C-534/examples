@@ -1,7 +1,10 @@
 {
     "name":"Create LeanKit card from ServiceNow notification",
     "parameters_in":{
-        "error_codes":[404, 500],
+        "error_codes":[
+            404,
+            500
+        ],
         "headers":{},
         "high_load":false,
         "http_method":"GET",
@@ -17,15 +20,15 @@
     "parameters_out":{
         "command":"AddCard",
         "optional":{
-            "board_id":"INSERT_TARGET_LEANKIT_BOARD_ID",
-            "lane_id":"INSERT_TARGET_LEANKIT_LANE_ID",
+            "board_id":"246277294",
+            "lane_id":"246306006",
             "position":"0"
         },
-        "url":"INSERT_YOUR_LEANKIT_SUBDOMAIN",
+        "url":"integration-servicenow",
         "user":{
-            "login":"INSERT_YOUR_LEANKIT_LOGIN",
-            "password":"INSERT_YOUR_LEANKIT_PASSWORD"
+            "login":"servicenow.leankit@cooperation534.com",
+            "password":"hnRDb5JE"
         }
     },
-    "transformation":"servicenow_notification = in_dict['data']\r\n\r\nNO_TITLE = u'NO TITLE PROVIDED'\r\nNO_DESCRITPION = u'NO DESCRIPTION PROVIDED'\r\n\r\nout_dict = {\r\n  \"Title\": servicenow_notification.get('short_description', None) or NO_TITLE,\r\n  \"Description\": servicenow_notification.get('description', None) or NO_DESCRITPION,\r\n  # \"TypeId\": 246277520,\r\n  \"Priority\": 1 \r\n}\r\n\r\nprint in_dict\r\nprint out_dict\r\n\r\n\"\"\" \r\nOTHER CARD ATTRIBUTES:\r\n\"Size\": 2\r\n\"DueDate\": \"\"\r\n\"ClassOfServiceId\": 123222\r\n\"AssignedUserIds\": []\r\n\"IsBlocked\": False\r\n\"BlockReason\": \"\" \r\n\r\nCard type IDs:\r\n181948639 - Other work\r\n181948640 - Defect\r\n\"\"\""
+    "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         246277520,\r\n  'Priority':       1 \r\n}"
 }
