@@ -1,25 +1,25 @@
 # Get all contacts from myob essentials to c-534 dump. 
 {
-    "name":"get_contacts_myob_essentials",
-    "connector_in":"MyOB Essentials, v1.0",
-    "parameters_in":{
-        "api_url":"https://api.myob.com/au/essentials/",
-        "api_method":"businesses/Insert_your_business_uid_here/contacts",
-        "http_method":"GET",
-        "rest_data":{},
-        "error_codes":[
-            304,
-            400,
-            401,
-            403,
-            404,
-            409,
-            410,
-            500,
-            501
-        ]
+  "name":"get_contacts_myob_essentials",
+  "connector_in":"MyOB Essentials, v1.0",
+  "parameters_in":{
+    "api_url":"https://api.myob.com/au/essentials/",
+      "api_method":"businesses/Insert_your_business_uid_here/contacts",
+      "http_method":"GET",
+      "rest_data":{},
+      "error_codes":[
+        304,
+        400,
+        401,
+        403,
+        404,
+        409,
+        410,
+        500,
+        501
+      ]
     },
-    "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.2",
-    "parameters_out":{}
+  "transformation":"out_dict = in_dict",
+  "connector_out":"Dump, v1.2",
+  "parameters_out":{}
 }
