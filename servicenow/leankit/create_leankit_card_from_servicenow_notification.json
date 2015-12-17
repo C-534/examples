@@ -1,10 +1,7 @@
 {
     "name":"Create LeanKit card from ServiceNow notification",
     "parameters_in":{
-        "error_codes":[
-            404,
-            500
-        ],
+        "error_codes":[404, 500],
         "headers":{},
         "high_load":false,
         "http_method":"GET",
@@ -20,14 +17,14 @@
     "parameters_out":{
         "command":"AddCard",
         "optional":{
-            "board_id":"246277294",
-            "lane_id":"246306006",
+            "board_id":"YOUR_LEANKIT_BOARD_ID",
+            "lane_id":"YOUR_LEANKIT_LANE_ID",
             "position":"0"
         },
         "url":"integration-servicenow",
         "user":{
-            "login":"servicenow.leankit@cooperation534.com",
-            "password":"hnRDb5JE"
+            "login":"YOUR_SERVICENOW_LOGIN",
+            "password":"YOUR_SERVICENOW_PASSWORD"
         }
     },
     "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         246277520,\r\n  'Priority':       1 \r\n}"
