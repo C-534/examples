@@ -27,5 +27,5 @@
             "password":"YOUR_LEANKIT_PASSWORD"
         }
     },
-    "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         246277520,\r\n  'Priority':       1 \r\n}"
+    "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         YOUR_CHOSEN_LEANKIT_CARD_TYPE_ID,\r\n  'Priority':       1 \r\n}"
 }
