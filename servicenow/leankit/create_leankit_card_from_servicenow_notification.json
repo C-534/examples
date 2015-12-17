@@ -17,14 +17,14 @@
     "parameters_out":{
         "command":"AddCard",
         "optional":{
-            "board_id":"YOUR_LEANKIT_BOARD_ID",
-            "lane_id":"YOUR_LEANKIT_LANE_ID",
+            "board_id":"YOUR_TARGET_LEANKIT_BOARD_ID",
+            "lane_id":"YOUR_TARGET_LEANKIT_LANE_ID",
             "position":"0"
         },
         "url":"integration-servicenow",
         "user":{
-            "login":"YOUR_SERVICENOW_LOGIN",
-            "password":"YOUR_SERVICENOW_PASSWORD"
+            "login":"YOUR_LEANKIT_LOGIN",
+            "password":"YOUR_LEANKIT_PASSWORD"
         }
     },
     "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         246277520,\r\n  'Priority':       1 \r\n}"
