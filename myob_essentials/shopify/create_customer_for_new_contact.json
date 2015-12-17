@@ -34,7 +34,7 @@
           'country': input_address['country'],
           'phone': 'phone': in_dict['phone'],
         ]
-  }",
+    }",
   "connector_out":"Shopify, v1.0",
   "parameters_out":{
     "api_url":"https://Insert_here_your_shopify_instance.myshopify.com/admin/",
@@ -49,3 +49,4 @@
       500
     ]
   }
+}
