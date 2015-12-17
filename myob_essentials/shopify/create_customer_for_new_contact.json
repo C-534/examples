@@ -1,0 +1,53 @@
+# Create new shopify customer for one myob essentials contact.
+{
+  "name":"create_customer_shoopify",
+  "connector_in":"MyOB Essentials, v1.0",
+  "parameters_in":{
+    "api_url":"https://api.myob.com/au/essentials/",
+    "api_method":"businesses/256826/contacts/7267374",
+    "http_method":"GET",
+    "rest_data":{},
+    "error_codes":[
+      304,
+      400,
+      401,
+      403,
+      404,
+      409,
+      410,
+      500,
+      501
+    ]
+  },
+  "transformation":"
+    input_address = in_dict['shippingAddress']
+    out_dict = {
+      'customer':{
+        'company': in_dict['name'],
+        'first_name': in_dict['firstName'],
+        'last_name': in_dict['lastName'],
+        'email': in_dict['email'],
+        'addresses': [
+          'address1': input_address['addressLine1'],
+          'city': input_address['suburb'],
+          'province': input_address['state'],
+          'zip': input_address['postCode'],
+          'country': input_address['country'],
+          'phone': 'phone': in_dict['phone'],
+        ]
+    }",
+  "connector_out":"Shopify, v1.0",
+  "parameters_out":{
+    "api_url":"https://Insert_here_your_shopify_instance.myshopify.com/admin/",
+    "api_method":"customers.json",
+    "http_method":"POST",
+    "rest_data":{},
+    "error_codes":[
+      401,
+      404,
+      422,
+      429,
+      500
+    ]
+  }
+}
