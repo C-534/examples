@@ -27,14 +27,14 @@
         'first_name': in_dict['firstName'],
         'last_name': in_dict['lastName'],
         'email': in_dict['email'],
-        'addresses': [
+        'addresses': [{
           'address1': input_address['addressLine1'],
           'city': input_address['suburb'],
           'province': input_address['state'],
           'zip': input_address['postCode'],
-          'country': input_address['country'],
-          'phone': 'phone': in_dict['phone'],
-        ]
+          'phone': in_dict['phone']
+        }]
+      }
     }",
   "connector_out":"Shopify, v1.0",
   "parameters_out":{
