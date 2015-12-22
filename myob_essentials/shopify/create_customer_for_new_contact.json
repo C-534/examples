@@ -4,7 +4,7 @@
   "connector_in":"MyOB Essentials, v1.0",
   "parameters_in":{
     "api_url":"https://api.myob.com/au/essentials/",
-    "api_method":"businesses/256826/contacts/7267374",
+    "api_method":"businesses/Insert_your_business_uid_here/contacts/Insert_your_contact_uid_here",
     "http_method":"GET",
     "rest_data":{},
     "error_codes":[
