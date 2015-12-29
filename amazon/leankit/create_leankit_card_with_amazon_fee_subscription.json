@@ -10,7 +10,7 @@
             "PostedAfter":"INSERT_DATE_IN_ISO_8601",
             "PostedBefore":"INSERT_DATE_IN_ISO_8601",
             "SellerId":"INSERT_YOUR_SELLER_ID",
-            "AWSAccessKeyId":"AKIAIGJYKHOFF7SHKH6Q",
+            "AWSAccessKeyId":"INSERT_YOUR_AWS_ACCESS_KEY_ID",
             "MWSAuthToken":"INSERT_YOUR_MWS_AUTH_TOKEN",
             "SignatureVersion":"2",
             "Version":"2015-05-01",
