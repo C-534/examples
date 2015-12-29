@@ -45,5 +45,5 @@ for card in in_dict['cards']:
         'Tags': tags,
         'ExternalSystemUrl': card['shortUrl']
     })
-    out_dict = {'data': cards}"
+out_dict = {'data': cards}"
 }
