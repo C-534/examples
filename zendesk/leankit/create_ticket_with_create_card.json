@@ -47,20 +47,19 @@
     "connector_out":"Leankit Kanban, v1.0",
     "name":"Create ticket with create card",
     "connector_in":"Zendesk, v1.0",
-    "transformation":"
-        ticket = in_dict['ticket']
-        tags = ','.join(ticket['tags'])
-        parts = ticket['created_at'][:10].split('-')
-        start_date = '/'.join([parts[1], parts[2], parts[0]])
+    "transformation":"ticket = in_dict['ticket']
+tags = ','.join(ticket['tags'])
+parts = ticket['created_at'][:10].split('-')
+start_date = '/'.join([parts[1], parts[2], parts[0]])
 
-        out_dict = {
-            'TypeId': INSERT_LEANKT_TYPE_CARD_HERE,
-            'Title': ticket['subject'],
-            'Description': ticket['description'],
-            'StartDate': start_date,
-            'DueDate': start_date,
-            'Tags': tags,
-            'Priority': ticket['priority'],
-            'ExternalSystemUrl': ticket['url']
-        }"
+out_dict = {
+    'TypeId': INSERT_LEANKT_TYPE_CARD_HERE,
+    'Title': ticket['subject'],
+    'Description': ticket['description'],
+    'StartDate': start_date,
+    'DueDate': start_date,
+    'Tags': tags,
+    'Priority': ticket['priority'],
+    'ExternalSystemUrl': ticket['url']
+}"
 }
