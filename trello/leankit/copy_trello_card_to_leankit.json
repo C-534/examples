@@ -1,24 +1,6 @@
 {
-    "transformation":"
-        cards = []
-        for card in in_dict['cards']:
-            tags = ','.join([obj['name'] for obj in card['labels']])
-            if card['due']:
-                # convert format date yyyy-mm-dd to mm/dd/yyyy
-                parts = card['due'][:10].split('-')
-                due_date = '/'.join([parts[1], parts[2], parts[0]])
-            else:
-                due_date = None
-                # create list dict contains info to cards leankit
-            cards.append({
-                'TypeId': INSERT_LEANKT_TYPE_CARD_HERE,
-                'Title': card['name'],
-                'Description': card['desc'],
-                'DueDate': due_date,
-                'Tags': tags,
-                'ExternalSystemUrl': card['shortUrl']
-            })
-            out_dict = {'data': cards}",
+    "name":"Trello copy card to leankit",
+    "connector_in":"Trello, v1.0",
     "parameters_in":{
         "api_url":"https://api.trello.com/1",
         "api_method":"lists/INSERT_LIS_ID_TOKEN_HERE?cards=open",
@@ -31,8 +13,6 @@
             500
         ]
     },
-    "name":"Trello copy card to leankit",
-    "connector_in":"Trello, v1.0",
     "connector_out":"Leankit Kanban, v1.0",
     "parameters_out":{
         "command":"AddCards",
@@ -46,5 +26,24 @@
             "login":"INSERT_YOUR_EMAIL_HERE",
             "password":"INSERT_YOUR_PASSWORD_HERE"
         }
-    }
+    },
+    "transformation":"cards = []
+for card in in_dict['cards']:
+    tags = ','.join([obj['name'] for obj in card['labels']])
+    if card['due']:
+        # convert format date yyyy-mm-dd to mm/dd/yyyy
+        parts = card['due'][:10].split('-')
+        due_date = '/'.join([parts[1], parts[2], parts[0]])
+    else:
+        due_date = None
+        # create list dict contains info to cards leankit
+    cards.append({
+        'TypeId': INSERT_LEANKT_TYPE_CARD_HERE,
+        'Title': card['name'],
+        'Description': card['desc'],
+        'DueDate': due_date,
+        'Tags': tags,
+        'ExternalSystemUrl': card['shortUrl']
+    })
+    out_dict = {'data': cards}"
 }
