@@ -1,0 +1,29 @@
+{
+    "name":"Get reports list Amazon",
+    "connector_in":"Amazon, v1.0",
+    "parameters_in":{
+        "api_url":"https://mws.amazonservices.com",
+        "api_method":"",
+        "api_secret":"INSERT_YOUR_SECRET_KEY",
+        "rest_data":{
+            "Action":"GetReportList",
+            "CreatedAfter":"2015-12-01T23:00:00Z",
+            "MarketplaceId.Id.1":"ATVPDKIKX0DER",
+            "SellerId":"INSERT_YOUR_SELLER_ID",
+            "MWSAuthToken":"INSERT_YOUR_MWS_AUTH_TOKEN",
+            "AWSAccessKeyId":"INSERT_YOUR_AWS_ACCESS_KEY_ID",
+            "SignatureVersion":"2",
+            "Version":"2009-01-01",
+            "SignatureMethod":"HmacSHA256"
+        },
+        "http_method":"POST",
+        "error_codes":[
+            400,
+            404,
+            500
+        ]
+    },
+    "connector_out":"Dump, v1.2",
+    "parameters_out":{},
+    "transformation":"out_dict = in_dict"
+}
