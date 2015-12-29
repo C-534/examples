@@ -1,0 +1,70 @@
+{
+    "name":"Create leankit card with Amazon fee subscription ",
+    "connector_in":"Amazon, v1.0",
+    "parameters_in":{
+        "api_url":"https://mws.amazonservices.com",
+        "api_method":"Finances/2015-05-01",
+        "api_secret":"INSERT_YOUR_SECRET_KEY",
+        "rest_data":{
+            "Action":"ListFinancialEvents",
+            "PostedAfter":"INSERT_DATE_IN_ISO_8601",
+            "PostedBefore":"INSERT_DATE_IN_ISO_8601"
+            "SellerId":"INSERT_YOUR_SELLER_ID",
+            "AWSAccessKeyId":"AKIAIGJYKHOFF7SHKH6Q",
+            "MWSAuthToken":"INSERT_YOUR_MWS_AUTH_TOKEN",
+            "SignatureVersion":"2",
+            "Version":"2015-05-01",
+            "SignatureMethod":"HmacSHA256"
+        },
+        "http_method":"POST",
+        "error_codes":[
+            400,
+            404,
+            500
+        ]
+    },
+    "parameters_out":{
+        "command":"AddCard",
+        "url":"INSERT_YOUR_HOSTNAME_HERE",
+        "user":{
+            "login":"INSERT_YOUR_EMAIL_HERE",
+            "password":"INSERT_YOUR_PASSWORD_HERE"
+        },
+        "optional":{
+            "board_id":"INSERT_BOARD_ID_HERE",
+            "lane_id":"INSERT_LANE_ID_HERE",
+            "position":"0"
+        }
+    },
+    "connector_out":"Leankit Kanban, v1.1",
+   "transformation":"
+def get_val_by_keys(keys, data):
+    result = None
+    if keys:
+        result = data.get(keys[0])
+        for key in keys[1:]:
+            if result:
+                result = result.get(key)
+
+    return result
+
+keys = [
+    'ListFinancialEventsResponse', 'ListFinancialEventsResult',
+    'FinancialEvents',  'ServiceFeeEventList', 'ServiceFeeEvent', 'FeeList', 
+    'FeeComponent'
+]
+data = get_val_by_keys(keys, in_dict)
+if data:
+    price = data.get('FeeAmount', '')
+    if price:
+        amount = price.get('CurrencyAmount')
+        code = price.get('CurrencyCode')
+        price = ' '.join([amount, code])
+    out_dict = {
+        'TypeId': INSERT_LEANKT_TYPE_CARD_HERE,
+        'Title': 'Amazon fee {}'.format(data.get('FeeType', '').lower()),
+        'Description': 'Amount: {}'.format(price)
+    }
+else:
+    out_dict = {}"
+}
