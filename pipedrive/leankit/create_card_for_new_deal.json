@@ -2,8 +2,8 @@
 # Create new leankit card for Pipedrive deal.
 # The pipedrive deal has to have least one activity with expected close date. 
 {
-    "name":"github_1",
-    "connector_in":"Pipedrive, v1.0",
+    "name":"create_leankit_card",
+    "connector_in":"Pipedrive, v1.1",
     "parameters_in":{
         "api_url":"https://api.pipedrive.com/v1",
         "api_method":"/deals/insert_your_id_deal_here",
