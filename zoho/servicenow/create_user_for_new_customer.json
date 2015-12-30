@@ -15,8 +15,7 @@
             500
         ]
     },
-    "transformation":"
-input_mapper_data = in_dict['response']['result']['Contacts']['row']['FL']
+    "transformation":"input_mapper_data = in_dict['response']['result']['Contacts']['row']['FL']
 output_mapper_data = {}
 for item in input_mapper_data:
     if item['val'] == 'First Name':
