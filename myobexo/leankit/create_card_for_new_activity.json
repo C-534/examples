@@ -2,62 +2,61 @@
     "name":"create_leankit_card",
     "connector_in":"MyOB Exo, v1.1",
     "parameters_in":{
-      "api_url":"Insert_your_myob_exo_service_base_url",
-      "api_method":"activity/Insert_activity_id_here",
-      "api_token":"Insert_your_myob_exo_token_here",
-      "http_method":"GET",
-      "user":{
-        "login":"Insert_your_myob_exo_login_here",
-        "password":"Insert_your_myob_exo_password_here"
-      },
-      "rest_data":{},
-      "error_codes":[
-        304,
-        400,
-        401,
-        403,
-        404,
-        409,
-        410,
-        500,
-        501
-      ]
+        "api_url":"Insert_your_myob_exo_service_base_url",
+        "api_method":"activity/Insert_activity_id_here",
+        "api_token":"Insert_your_myob_exo_token_here",
+        "http_method":"GET",
+        "user":{
+            "login":"Insert_your_myob_exo_login_here",
+            "password":"Insert_your_myob_exo_password_here"
+        },
+        "rest_data":{},
+        "error_codes":[
+            304,
+            400,
+            401,
+            403,
+            404,
+            409,
+            410,
+            500,
+            501
+        ]
     },
     "transformation":"
-      def get_date_in_out_format(input_date):
-        date_result = ''
-          if input_date:
-              input_date = input_date[0:10].split('-')
-              date_result = '/'.join([
-              input_date[1], input_date[2], input_date[0]])
-          return date_result
-        finish_date = in_dict.get('enddatetime')
-        start_date = in_dict.get('startdatetime')
-        out_dict = {
-            'Title': in_dict.get('subject'),
-            'Description': in_dict.get('details'),
-            'Priority': in_dict.get('priority'),
-            'Tags': in_dict.get('next_activity_subject'),
-            'DueDate': get_date_in_out_format(finish_date),
-            'StartDate': get_date_in_out_format(start_date),
-            'ExternalCardID': in_dict.get('id'),
-            'ExternalSystemName': in_dict.get('org_name'),
-            'ExternalSystemUrl': in_dict.get('href'),
-            'TypeId': Insert_your_type_card_here
-    }",
-  "connector_out":"Leankit Kanban, v1.1",
-  "parameters_out":{
-    "command":"AddCard",
-    "url":"Insert_your_hostname_here",
-    "user":{
-        "login":"Insert_your_email_here",
-        "password":"Insert_your_password_here"
-    },
-    "optional":{
-        "board_id":"Insert_your_board_id_here",
-        "lane_id":"Insert_your_lane_id_here",
-        "position":"Insert_your_position_card_here"
+def get_date_in_out_format(input_date):
+    date_result = ''
+    if input_date:
+        input_date = input_date[0:10].split('-')
+        date_result = '/'.join([
+            input_date[1], input_date[2], input_date[0]])
+    return date_result
+finish_date = in_dict.get('enddatetime')
+start_date = in_dict.get('startdatetime')
+out_dict = {
+    'Title': in_dict.get('subject'),
+    'Description': in_dict.get('details'),
+    'Priority': in_dict.get('priority'),
+    'Tags': in_dict.get('next_activity_subject'),
+    'DueDate': get_date_in_out_format(finish_date),
+    'StartDate': get_date_in_out_format(start_date),
+    'ExternalCardID': in_dict.get('id'),
+    'ExternalSystemName': in_dict.get('org_name'),
+    'ExternalSystemUrl': in_dict.get('href'),
+    'TypeId': Insert_your_type_card_here
+}",
+    "connector_out":"Leankit Kanban, v1.1",
+    "parameters_out":{
+        "command":"AddCard",
+        "url":"Insert_your_hostname_here",
+        "user":{
+            "login":"Insert_your_email_here",
+            "password":"Insert_your_password_here"
+        },
+        "optional":{
+            "board_id":"Insert_your_board_id_here",
+            "lane_id":"Insert_your_lane_id_here",
+            "position":"Insert_your_position_card_here"
+        }
     }
-  },
-
 }
