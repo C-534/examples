@@ -1,6 +1,8 @@
 
 # Get all deals from pipedrive to c-534 dump. 
 {
+    "name":"get_deals",
+    "connector_in":"Pipedrive, v1.1",
     "parameters_in":{
         "api_token":"Insert_your_api_token_here",
         "api_url":"https://api.pipedrive.com/v1",
@@ -12,9 +14,7 @@
             401
         ]
     },
+    "transformation":"out_dict = in_dict",
     "parameters_out":{},
-    "connector_out":"Dump, v1.0",
-    "name":"github_2",
-    "connector_in":"Pipedrive, v1.0",
-    "transformation":"out_dict = in_dict"
+    "connector_out":"Dump, v1.2"
 }
