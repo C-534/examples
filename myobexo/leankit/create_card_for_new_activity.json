@@ -1,3 +1,4 @@
+# Create new leankit card for one myob exo acitvity.
 {
     "name":"create_leankit_card",
     "connector_in":"MyOB Exo, v1.1",
