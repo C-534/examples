@@ -36,7 +36,7 @@
         }]
       }
     }",
-  "connector_out":"Shopify, v1.0",
+  "connector_out":"Shopify, v1.1",
   "parameters_out":{
     "api_url":"https://Insert_here_your_shopify_instance.myshopify.com/admin/",
     "api_method":"customers.json",
