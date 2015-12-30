@@ -1,7 +1,7 @@
 # Get all accounts from pipedrive to c-534 dump. 
 {
-    "name":"process_1",
-    "connector_in":"Wrike REST OAuth2, v1.0",
+    "name":"get_accounts",
+    "connector_in":"Wrike REST OAuth2, v1.1",
     "parameters_in":{
         "error_codes":[
             404,
