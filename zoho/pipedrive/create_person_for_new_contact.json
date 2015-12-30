@@ -16,7 +16,7 @@
         ]
     },
     "transformation":"input_mapper_data = in_dict.get('response').get('result').get(
-        'Contacts').get('row').get('FL')
+    'Contacts').get('row').get('FL')
 
 def set_mapper_data(input_mapper_data):
     contact_names = {}
