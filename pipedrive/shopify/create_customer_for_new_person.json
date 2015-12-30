@@ -13,8 +13,7 @@
       "http_method":"GET",
       "rest_data":{}
     },
-    "transformation":"
-input_mapper_data = in_dict['data']
+    "transformation":"input_mapper_data = in_dict['data']
 out_dict = {
     'customer':{
         'company': input_mapper_data['org_name'],
