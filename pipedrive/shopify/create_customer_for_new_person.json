@@ -14,19 +14,19 @@
       "rest_data":{}
     },
     "transformation":"
-  input_mapper_data = in_dict['data']
-  out_dict = {
+input_mapper_data = in_dict['data']
+out_dict = {
     'customer':{
-      'company': input_mapper_data['org_name'],
-      'first_name': input_mapper_data['first_name'],
-      'last_name': input_mapper_data['last_name'],
-      'phone': input_mapper_data['phone'][0]['value'],
-      'email': input_mapper_data['email'][0]['value'],
-      'order_count': input_mapper_data['activities_count'],
-      'name': input_mapper_data['name'],
-      'state': input_mapper_data['active_flag']
+        'company': input_mapper_data['org_name'],
+        'first_name': input_mapper_data['first_name'],
+        'last_name': input_mapper_data['last_name'],
+        'phone': input_mapper_data['phone'][0]['value'],
+        'email': input_mapper_data['email'][0]['value'],
+        'order_count': input_mapper_data['activities_count'],
+        'name': input_mapper_data['name'],
+        'state': input_mapper_data['active_flag']
     }
-  }",
+ }",
     "connector_out":"Shopify, v1.1",
     "parameters_out":{
         "api_url":"https://Insert_your_shop_name_here.myshopify.com/admin/",
