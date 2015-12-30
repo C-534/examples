@@ -37,6 +37,7 @@ for item in input_mapper_data:
     elif item['val'] == 'Assistant':
         output_mapper_data['manager'] = item['content']
 out_dict = output_mapper_data",
+
     "connector_out":"Servicenow, v1.1",
     "parameters_out":{
         "api_url":"https://Insert_your_servicenow_instanse_here.service-now.com/api/now/table/",
