@@ -10,8 +10,7 @@
         ],
         "url":"https://www.wrike.com/api/v3/tasks/Insert_your_task_id_here"
     },
-    "transformation":"
-mapper_data = in_dict['data'][0]
+    "transformation":"mapper_data = in_dict['data'][0]
 dates = mapper_data['dates']
 dct_priorities = {'Low': 0, 'Normal': 1, 'High': 2}
 priority = mapper_data['importance']
