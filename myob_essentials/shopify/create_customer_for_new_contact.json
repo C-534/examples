@@ -1,6 +1,6 @@
 # Create new shopify customer for one myob essentials contact.
 {
-    "name":"create_customer_shoopify",
+    "name":"create_customer_shopify",
     "connector_in":"MYOB Essentials, v1.1",
     "parameters_in":{
         "api_url":"https://api.myob.com/au/essentials/",
