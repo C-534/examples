@@ -24,7 +24,8 @@
             501
         ]
     },
-    "transformation":"def get_date_in_out_format(input_date):
+    "transformation":"
+def get_date_in_out_format(input_date):
     date_result = ''
     if input_date:
         input_date = input_date[0:10].split('-')
