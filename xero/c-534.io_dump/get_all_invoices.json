@@ -1,7 +1,7 @@
 # Get all invoices from xero to c-534 dump. 
 {
-    "name":"Process_1",
-    "connector_in":"Xero, v1.0",
+    "name":"get_all_invoices",
+    "connector_in":"Xero, v1.1",
     "parameters_in":{
         "api_url":"https://api.xero.com/api.xro/2.0/",
         "api_method":"Invoices",
@@ -17,6 +17,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.0",
+    "connector_out":"Dump, v1.2",
     "parameters_out":{}
 }
