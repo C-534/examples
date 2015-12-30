@@ -24,14 +24,14 @@
             501
         ]
     },
-    "transformation":"
-def get_date_in_out_format(input_date):
+    "transformation":"def get_date_in_out_format(input_date):
     date_result = ''
     if input_date:
         input_date = input_date[0:10].split('-')
         date_result = '/'.join([
             input_date[1], input_date[2], input_date[0]])
     return date_result
+    
 finish_date = in_dict.get('enddatetime')
 start_date = in_dict.get('startdatetime')
 out_dict = {
