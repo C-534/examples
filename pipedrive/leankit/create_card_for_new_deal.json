@@ -21,8 +21,8 @@ def get_date_in_out_format(input_date):
     date_result = ''
     if input_date:
         input_date = input_date.split('-')
-    date_result = '/'.join([
-        input_date[1], input_date[2], input_date[0]])
+        date_result = '/'.join([
+            input_date[1], input_date[2], input_date[0]])
     return date_result
 in_data = in_dict.get('data')
 finish_date = in_data.get('expected_close_date')
@@ -38,7 +38,7 @@ out_dict = {
     'ExternalSystemName': in_data.get('org_name'),
     'TypeId': Insert_your_card_id_here
 }",
-    "connector_out":"Leankit Kanban, v1.0",
+    "connector_out":"Leankit Kanban, v1.1",
     "parameters_out":{
         "url":"Insert_your_hostname_here",
         "command":"AddCard",
