@@ -19,8 +19,7 @@
             501
         ]
     },
-    "transformation":"
-input_address = in_dict['shippingAddress']
+    "transformation":"input_address = in_dict['shippingAddress']
 out_dict = {
     'customer':{
         'company': in_dict['name'],
