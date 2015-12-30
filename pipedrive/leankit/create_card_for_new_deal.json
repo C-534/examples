@@ -15,8 +15,8 @@
             401
         ]
     },
-    "transformation":"
-# function convert date input format to date output format.
+    "transformation":"# function convert date input format to date output format.
+    
 def get_date_in_out_format(input_date):
     date_result = ''
     if input_date:
@@ -24,6 +24,7 @@ def get_date_in_out_format(input_date):
         date_result = '/'.join([
             input_date[1], input_date[2], input_date[0]])
     return date_result
+    
 in_data = in_dict.get('data')
 finish_date = in_data.get('expected_close_date')
 start_date = in_data.get('next_activity_date')
