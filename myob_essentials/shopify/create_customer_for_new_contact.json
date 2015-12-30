@@ -28,11 +28,11 @@ out_dict = {
         'last_name': in_dict['lastName'],
         'email': in_dict['email'],
         'addresses': [{
-          'address1': input_address['addressLine1'],
-          'city': input_address['suburb'],
-          'province': input_address['state'],
-          'zip': input_address['postCode'],
-          'phone': in_dict['phone']
+            'address1': input_address['addressLine1'],
+            'city': input_address['suburb'],
+            'province': input_address['state'],
+            'zip': input_address['postCode'],
+            'phone': in_dict['phone']
         }]
     }
 }",
