@@ -27,7 +27,7 @@
     "transformation":"
 def get_attributes(contact):
     id_ = 'pipe_{}'.format(contact['id'])
-    print "\""
+    print \"\\\"\
     data = {
     'type' : 'Contact',
     'referenceId' : id_
