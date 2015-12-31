@@ -1,3 +1,4 @@
+# Get Amazon report list to c-534 dump.
 {
     "name":"Get reports list Amazon",
     "connector_in":"Amazon, v1.0",
