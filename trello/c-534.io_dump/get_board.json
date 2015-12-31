@@ -1,7 +1,7 @@
 # Get board from Trello to c-534 dump. 
 {
     "name":"Trello get board",
-    "connector_in":"Trello, v1.0",
+    "connector_in":"Trello, v1.1",
     "parameters_in":{
         "api_url":"https://api.trello.com/1",
         "api_method":"/boards/INSERT_YOUR_BOARD_ID_HERE",
