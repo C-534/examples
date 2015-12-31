@@ -1,3 +1,4 @@
+# Create card in Leankit with Amazon fee subscription from dates period.
 {
     "name":"Create leankit card with Amazon fee subscription ",
     "connector_in":"Amazon, v1.0",
@@ -23,6 +24,7 @@
             500
         ]
     },
+    "connector_out":"Leankit Kanban, v1.1",
     "parameters_out":{
         "command":"AddCard",
         "url":"INSERT_YOUR_HOSTNAME_HERE",
@@ -36,7 +38,6 @@
             "position":"0"
         }
     },
-    "connector_out":"Leankit Kanban, v1.1",
    "transformation":"
 def get_val_by_keys(keys, data):
     result = None
