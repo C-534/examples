@@ -1,3 +1,4 @@
+# Copy contacts from Pipedrive to Salesforce.
 {
     "name":"Copy contacts from pipedrive to salesforce",
     "connector_in":"Pipedrive, v1.0",
