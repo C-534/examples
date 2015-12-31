@@ -1,6 +1,7 @@
+# Copy Trello card to leankit.
 {
     "name":"Trello copy card to leankit",
-    "connector_in":"Trello, v1.0",
+    "connector_in":"Trello, v1.1",
     "parameters_in":{
         "api_url":"https://api.trello.com/1",
         "api_method":"lists/INSERT_LIS_ID_TOKEN_HERE?cards=open",
@@ -13,7 +14,7 @@
             500
         ]
     },
-    "connector_out":"Leankit Kanban, v1.0",
+    "connector_out":"Leankit Kanban, v1.1",
     "parameters_out":{
         "command":"AddCards",
         "url":"INSERT_YOUR_HOSTNAME_HERE",
