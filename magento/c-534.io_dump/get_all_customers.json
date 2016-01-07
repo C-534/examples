@@ -1,7 +1,7 @@
 # Get all customers from magento to c-534 dump. 
 {
     "name":"get_customers",
-    "connector_in":"Magento, v1.2",
+    "connector_in":"Magento, v1.1",
     "parameters_in":{
         "api_url":"http://Insert_your_magento_subdomain_here/api/rest/",
         "api_method":"customers",
@@ -17,6 +17,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.3",
+    "connector_out":"Dump, v1.2",
     "parameters_out":{}
 }
