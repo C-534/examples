@@ -1,0 +1,30 @@
+{
+    "name":"Create MYOB Exo Contact from Pipedrive notification",
+    "connector_in":"REST, v4.8",
+    "parameters_in":{
+        "error_codes":[],
+        "headers":{},
+        "high_load":false,
+        "http_method":"GET",
+        "queue_delay_ms":0,
+        "queue_warning_minutes":60,
+        "rest_data":{},
+        "url":"",
+        "url_params":{},
+        "user":{}
+    },
+    "connector_out":"MyOB Exo, v1.2",
+    "parameters_out":{
+        "api_url":"YOUR_MYOB_EXO_API_URL",
+        "api_method":"contact",
+        "api_token":"YOUR_MYOB_EXO_API_TOKEN",
+        "http_method":"POST",
+        "user":{
+            "login":"YOUR_MYOB_EXO_LOGIN",
+            "password":"YOUR_MYOB_EXO_PASSWORD"
+        },
+        "rest_data":{},
+        "error_codes":[]
+    },
+    "transformation":"pipedrive_notification = in_dict['data']['current']\r\npn = pipedrive_notification\r\n\r\nout_dict = {\r\n    'firstname': pn['first_name'] or pn['name'],\r\n    'lastname':  pn['last_name'] if pn['first_name'] else '',\r\n    'email':     pn['email'][0]['value']\r\n}"
+}
