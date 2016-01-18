@@ -32,10 +32,10 @@
         }
     },
     "transformation":"servicenow_notification = in_dict['data']
-	out_dict = {
-		'Title':      	servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',
-		'Description':	servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',
+    out_dict = {
+		'Title':        servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',
+		'Description':  servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',
 		'TypeId':       246277520,
-		'Priority':       1
-	}"
+        'Priority':     1
+    }"
 }
