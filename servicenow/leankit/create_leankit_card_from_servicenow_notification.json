@@ -1,7 +1,12 @@
+# When a new Incident is created in ServiceNow - create a new Card in Leankit.
 {
     "name":"Create LeanKit card from ServiceNow notification",
+    "connector_in":"REST, v4.6",
     "parameters_in":{
-        "error_codes":[404, 500],
+        "error_codes":[
+            404,
+            500
+        ],
         "headers":{},
         "high_load":false,
         "http_method":"GET",
@@ -13,7 +18,6 @@
         "user":{}
     },
     "connector_out":"Leankit Kanban, v1.0",
-    "connector_in":"REST, v4.6",
     "parameters_out":{
         "command":"AddCard",
         "optional":{
@@ -27,5 +31,11 @@
             "password":"YOUR_LEANKIT_PASSWORD"
         }
     },
-    "transformation":"servicenow_notification = in_dict['data']\r\n\r\nout_dict = {\r\n  'Title':          servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',\r\n  'Description':    servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',\r\n  'TypeId':         YOUR_CHOSEN_LEANKIT_CARD_TYPE_ID,\r\n  'Priority':       1 \r\n}"
+    "transformation":"servicenow_notification = in_dict['data']
+	out_dict = {
+		'Title':      	servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',
+		'Description':	servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',
+		'TypeId':       246277520,
+		'Priority':       1
+	}"
 }
