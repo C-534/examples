@@ -1,0 +1,36 @@
+{
+    "name":"Create a new Account in Salesforce when a new Organization is added to Pipedrive",
+    "connector_in":"REST, v4.8",
+    "parameters_in":{
+        "error_codes":[
+            404,
+            500
+        ],
+        "headers":{},
+        "high_load":false,
+        "http_method":"GET",
+        "queue_delay_ms":0,
+        "queue_warning_minutes":60,
+        "rest_data":{},
+        "url":"",
+        "url_params":{},
+        "user":{}
+    },
+    "connector_out":"Salesforce, v1.2",
+    "parameters_out":{
+        "api_url":"https://eu6.salesforce.com/services/data/v35.0",
+        "api_method":"sobjects/Account/",
+        "http_method":"POST",
+        "rest_data":{},
+        "error_codes":[
+            401,
+            404,
+            500
+        ]
+    },
+    "transformation":"
+pipedrive_notification = in_dict['data']['current']
+out_dict = {
+    'Name': pipedrive_notification['name']
+}"
+}
