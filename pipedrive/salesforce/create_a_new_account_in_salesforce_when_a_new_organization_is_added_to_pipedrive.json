@@ -18,7 +18,7 @@
     },
     "connector_out":"Salesforce, v1.2",
     "parameters_out":{
-        "api_url":"https://eu6.salesforce.com/services/data/v35.0",
+        "api_url":"https://INSERT_INSTANCE.salesforce.com/services/data/v35.0",
         "api_method":"sobjects/Account/",
         "http_method":"POST",
         "rest_data":{},
