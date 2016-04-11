@@ -1,7 +1,7 @@
 # Create card in Leankit with Amazon fee subscription from dates period.
 {
     "name":"Create leankit card with Amazon fee subscription ",
-    "connector_in":"Amazon, v1.0",
+    "connector_in":"Amazon, v1.3",
     "parameters_in":{
         "api_url":"https://mws.amazonservices.com",
         "api_method":"Finances/2015-05-01",
@@ -24,7 +24,7 @@
             500
         ]
     },
-    "connector_out":"Leankit Kanban, v1.1",
+    "connector_out":"Leankit Kanban, v1.6",
     "parameters_out":{
         "command":"AddCard",
         "url":"INSERT_YOUR_HOSTNAME_HERE",
