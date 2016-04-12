@@ -1,7 +1,7 @@
 # Create new servicenow user for one zoho customer.
 {
     "name":"create_servicenow_user",
-    "connector_in":"Zoho, v1.1",
+    "connector_in":"Zoho, v1.5",
     "parameters_in":{
         "api_url":"https://crm.zoho.com/crm/private/json/",
         "api_method":"Contacts/getRecordById?id=Insert_your_contact_id_here",
@@ -38,7 +38,7 @@ for item in input_mapper_data:
         output_mapper_data['manager'] = item['content']
 out_dict = output_mapper_data",
 
-    "connector_out":"Servicenow, v1.1",
+    "connector_out":"Servicenow, v1.5",
     "parameters_out":{
         "api_url":"https://Insert_your_servicenow_instanse_here.service-now.com/api/now/table/",
         "api_method":"sys_user",
