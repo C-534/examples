@@ -1,7 +1,7 @@
 # Create new leankit card for one myob exo acitvity.
 {
     "name":"create_leankit_card",
-    "connector_in":"MyOB Exo, v1.1",
+    "connector_in":"MyOB Exo (supp. Basic Auth), v1.6",
     "parameters_in":{
         "api_url":"Insert_your_myob_exo_service_base_url",
         "api_method":"activity/Insert_activity_id_here",
@@ -47,7 +47,7 @@ out_dict = {
     'ExternalSystemUrl': in_dict.get('href'),
     'TypeId': Insert_your_type_card_here
 }",
-    "connector_out":"Leankit Kanban, v1.1",
+    "connector_out":"Leankit Kanban, v1.6",
     "parameters_out":{
         "command":"AddCard",
         "url":"Insert_your_hostname_here",
