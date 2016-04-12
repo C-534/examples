@@ -1,7 +1,7 @@
 # Create new lenakit card for one wrike task.
 {
     "name":"create_leankit_card",
-    "connector_in":"Wrike REST OAuth2, v1.1",
+    "connector_in":"Wrike REST (supp. OAuth 2.0), v1.5",
     "parameters_in":{
         "error_codes":[
             404,
@@ -32,7 +32,7 @@ out_dict = {
     'Priority': dct_priorities[priority],
     'Description': mapper_data['description']
 }",
-    "connector_out":"Leankit Kanban, v1.1",
+    "connector_out":"Leankit Kanban, v1.6",
     "parameters_out":{
         "command":"AddCard",
         "optional":{
