@@ -3,7 +3,7 @@
 # The pipedrive deal has to have least one activity with expected close date. 
 {
     "name":"create_leankit_card",
-    "connector_in":"Pipedrive, v1.1",
+    "connector_in":"Pipedrive, v1.5",
     "parameters_in":{
         "api_url":"https://api.pipedrive.com/v1",
         "api_method":"/deals/insert_your_id_deal_here",
@@ -39,7 +39,7 @@ out_dict = {
     'ExternalSystemName': in_data.get('org_name'),
     'TypeId': Insert_your_card_id_here
 }",
-    "connector_out":"Leankit Kanban, v1.1",
+    "connector_out":"Leankit Kanban, v1.6",
     "parameters_out":{
         "url":"Insert_your_hostname_here",
         "command":"AddCard",
