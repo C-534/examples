@@ -1,7 +1,7 @@
 # Get all contacts from salesforce to c-534 dump.
 {
     "name":"Get contacts",
-    "connector_in":"Salesforce, v1.1",
+    "connector_in":"Salesforce (supp. OAuth 2.0), v1.6",
     "parameters_in":{
         "api_url":"https://INSERT_INSTANCE.salesforce.com/services/data/v35.0",
         "api_method":"query/?q=SELECT+name,email,phone+from+Contact",
@@ -14,6 +14,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.2",
+    "connector_out":"Dump, v1.6",
     "parameters_out":{}
 }
