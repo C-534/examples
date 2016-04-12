@@ -1,7 +1,7 @@
 # When a new Incident is created in ServiceNow - create a new Card in Leankit.
 {
     "name":"Create LeanKit card from ServiceNow notification",
-    "connector_in":"REST, v4.6",
+    "connector_in":"REST, v4.12",
     "parameters_in":{
         "error_codes":[
             404,
@@ -17,7 +17,7 @@
         "url_params":{},
         "user":{}
     },
-    "connector_out":"Leankit Kanban, v1.0",
+    "connector_out":"Leankit Kanban, v1.6",
     "parameters_out":{
         "command":"AddCard",
         "optional":{
