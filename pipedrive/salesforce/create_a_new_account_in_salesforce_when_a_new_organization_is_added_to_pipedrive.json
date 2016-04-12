@@ -1,6 +1,6 @@
 {
     "name":"Create a new Account in Salesforce when a new Organization is added to Pipedrive",
-    "connector_in":"REST, v4.8",
+    "connector_in":"REST, v4.12",
     "parameters_in":{
         "error_codes":[
             404,
@@ -16,7 +16,7 @@
         "url_params":{},
         "user":{}
     },
-    "connector_out":"Salesforce, v1.2",
+    "connector_out":"Salesforce (supp. OAuth 2.0), v1.6",
     "parameters_out":{
         "api_url":"https://INSERT_INSTANCE.salesforce.com/services/data/v35.0",
         "api_method":"sobjects/Account/",
