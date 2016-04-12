@@ -1,7 +1,7 @@
 # Get all contacts from myob essentials to c-534 dump. 
 {
     "name":"get_contacts_myob_essentials",
-    "connector_in":"MYOB Essentials, v1.9",
+    "connector_in":"MYOB Essentials (supp. OAuth 2.0), v1.9",
     "parameters_in":{
         "api_url":"https://api.myob.com/au/essentials/",
         "api_method":"businesses/Insert_your_business_uid_here/contacts",
