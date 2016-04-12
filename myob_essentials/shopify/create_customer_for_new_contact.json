@@ -1,7 +1,7 @@
 # Create new shopify customer for one myob essentials contact.
 {
     "name":"create_customer_shopify",
-    "connector_in":"MYOB Essentials, v1.9",
+    "connector_in":"MYOB Essentials (supp. OAuth 2.0), v1.9",
     "parameters_in":{
         "api_url":"https://api.myob.com/au/essentials/",
         "api_method":"businesses/Insert_your_business_uid_here/contacts/Insert_your_contact_uid_here",
@@ -35,7 +35,7 @@ out_dict = {
         }]
     }
 }",
-    "connector_out":"Shopify, v1.6",
+    "connector_out":"Shopify (supp. OAuth 2.0), v1.6",
     "parameters_out":{
         "api_url":"https://Insert_here_your_shopify_instance.myshopify.com/admin/",
         "api_method":"customers.json",
