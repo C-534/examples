@@ -1,7 +1,7 @@
 # Get all incidents from servicenow to c-534 dump.
 {
     "name":"get_incidents",
-    "connector_in":"Servicenow, v1.1",
+    "connector_in":"Servicenow, v1.5",
     "parameters_in":{
         "api_url":"https://Insert_your_servicenow_instanse_here.service-now.com/api/now/table/",
         "api_method":"incident",
@@ -20,6 +20,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.2",
+    "connector_out":"Dump, v1.6",
     "parameters_out":{}
 }
