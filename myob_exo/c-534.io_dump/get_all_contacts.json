@@ -1,7 +1,7 @@
 # Get all contacts from myob exo to c-534 dump. 
 {
     "name":"get_contacts",
-    "connector_in":"MyOB Exo, v1.1",
+    "connector_in":"MyOB Exo (supp. Basic Auth), v1.6",
     "parameters_in":{
         "api_url":"Insert_your_myob_exo_service_base_url",
         "api_method":"contact",
@@ -25,6 +25,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.2",
+    "connector_out":"Dump, v1.6",
     "parameters_out":{}
 }
