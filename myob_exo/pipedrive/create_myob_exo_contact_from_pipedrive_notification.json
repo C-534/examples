@@ -1,6 +1,6 @@
 {
     "name":"Create MYOB Exo Contact from Pipedrive notification",
-    "connector_in":"REST, v4.8",
+    "connector_in":"REST, v4.12",
     "parameters_in":{
         "error_codes":[],
         "headers":{},
@@ -13,7 +13,7 @@
         "url_params":{},
         "user":{}
     },
-    "connector_out":"MyOB Exo, v1.2",
+    "connector_out":"MyOB Exo (supp. Basic Auth), v1.6",
     "parameters_out":{
         "api_url":"YOUR_MYOB_EXO_API_URL",
         "api_method":"contact",
