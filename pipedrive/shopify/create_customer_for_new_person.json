@@ -1,7 +1,7 @@
 # Create new shopify customer for one pipedrive person.
 {
     "name":"create_shopify_customer",
-    "connector_in":"Pipedrive, v1.1",
+    "connector_in":"Pipedrive, v1.5",
     "parameters_in":{
       "api_method":"/persons/Insert_your_person_id_here",
       "api_token":"Insert_your_pipedrive_token_here",
@@ -26,7 +26,7 @@ out_dict = {
         'state': input_mapper_data['active_flag']
     }
  }",
-    "connector_out":"Shopify, v1.1",
+    "connector_out":"Shopify (supp. OAuth 2.0), v1.6",
     "parameters_out":{
         "api_url":"https://Insert_your_shop_name_here.myshopify.com/admin/",
         "api_method":"customers.json",
