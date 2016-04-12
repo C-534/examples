@@ -1,7 +1,7 @@
 # Create new magento customer address for one xero customer.
 {
     "name":"create_magento_customer",
-    "connector_in":"Xero, v1.1",
+    "connector_in":"Xero (supp. OAuth 1.0a), v1.7",
     "parameters_in":{
         "api_url":"https://api.xero.com/api.xro/2.0/",
         "api_method":"Contacts/Insert_your_contact_id_here",
@@ -29,7 +29,7 @@ out_dict = {
     'postcode': address['PostalCode'],
     'region': address['Region'],
 }",
-    "connector_out":"Magento, v1.1",
+    "connector_out":"Magento (supp. OAuth 1.0a), v1.6",
     "parameters_out":{
         "api_url":"http://Insert_your_magento_subdomain_here/api/rest/",
         "api_method":"customers/Insert_your_customer_id_here/addresses",
