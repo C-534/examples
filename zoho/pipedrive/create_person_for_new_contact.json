@@ -1,7 +1,7 @@
 # Create new pipedrive person for zoho contact.
 {
     "name":"create_person",
-    "connector_in":"Zoho, v1.1",
+    "connector_in":"Zoho, v1.5",
     "parameters_in":{
         "api_url":"https://crm.zoho.com/crm/private/json/",
         "api_method":"Contacts/getRecordById?id=Insert_your_contact_id_here",
@@ -65,7 +65,7 @@ def get_item_list(elem):
 
 out_dict = set_mapper_data(input_mapper_data)",
     
-    "connector_out":"Pipedrive, v1.1",
+    "connector_out":"Pipedrive, v1.5",
     "parameters_out":{
         "api_url":"https://api.pipedrive.com/v1",
         "api_method":"/persons",
