@@ -1,7 +1,7 @@
 # Create new pipedrive organization for one xero contact.
 {
     "name":"create_organization",
-    "connector_in":"Xero, v1.1",
+    "connector_in":"Xero (supp. OAuth 1.0a), v1.7",
     "parameters_in":{
         "api_url":"https://api.xero.com/api.xro/2.0/",
         "api_method":"Contacts/Insert_your_contact_id_here",
@@ -28,7 +28,7 @@ out_dict = {
     'address': address['AddressLine1'],
     'country_code': phone['PhoneCountryCode']
 }",
-    "connector_out":"Pipedrive, v1.1",
+    "connector_out":"Pipedrive, v1.5",
     "parameters_out":{
         "api_method":"/organizations",
         "api_token":"Insert_your_pipedrive_token_here",
