@@ -1,7 +1,7 @@
 # Get all customers from shopify to c-534 dump. 
 {
     "name":"get_customers",
-    "connector_in":"Shopify, v1.1",
+    "connector_in":"Shopify (supp. OAuth 2.0), v1.6",
     "parameters_in":{
         "api_url":"https://Insert_your_shop_name_here.myshopify.com/admin/",
         "api_method":"customers.json",
@@ -16,6 +16,6 @@
         ]
     },
     "transformation":"out_dict = in_dict",
-    "connector_out":"Dump, v1.2",
+    "connector_out":"Dump, v1.6",
     "parameters_out":{}
 }
