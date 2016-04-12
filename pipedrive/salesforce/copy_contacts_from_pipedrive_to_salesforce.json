@@ -1,7 +1,7 @@
 # Copy contacts from Pipedrive to Salesforce.
 {
     "name":"Copy contacts from pipedrive to salesforce",
-    "connector_in":"Pipedrive, v1.1",
+    "connector_in":"Pipedrive, v1.5",
     "parameters_in":{
         "api_method":"/persons",
         "api_token":"YOUR_API_TOKEN",
@@ -13,7 +13,7 @@
         "http_method":"GET",
         "rest_data":{}
     },
-    "connector_out":"Salesforce, v1.1",
+    "connector_out":"Salesforce (supp. OAuth 2.0), v1.6",
     "parameters_out":{
         "api_url":"https://INSERT_INSTANCE.salesforce.com/services/data/v35.0",
         "api_method":"composite/tree/Contact/",
