@@ -1,28 +1,72 @@
 {
-    "name":"02. GET data of a person and make SMSAPI URL",
-    "connector_in":"REST, v4.3 beta",
-    "parameters_in":{
-        "error_codes":[
+    "name": "NAME_OF_YOUR_SECOND_MICROSERVICE",
+    "connector_in": "REST, v4.3 beta",
+    "parameters_in": {
+        "error_codes": [
             404,
             500
         ],
-        "headers":{},
-        "http_method":"GET",
-        "rest_data":{},
-        "url":"https://api.pipedrive.com/v1",
-        "url_params":{
-            "token":"c57ac3365f43fdfa05b9cb2623b6cba1151c28fe"
+        "headers": {},
+        "http_method": "GET",
+        "rest_data": {},
+        "url": "https://api.pipedrive.com/v1",
+        "url_params": {
+            "token": "YOUR_TOKEN"
         },
-        "user":{}
+        "user": {}
     },
-    "connector_out":"SPLIT, v1.1",
-    "parameters_out":{
-        "delay_ms":"0",
-        "name":"process",
-        "params":{
-            "param_dict":{},
-            "url":"some_url"
+    "connector_out": "SPLIT, v1.1",
+    "parameters_out": {
+        "delay_ms": "0",
+        "name": "process",
+        "params": {
+            "param_dict": {},
+            "url": "some_url"
         }
     },
-    "transformation":"print in_dict\r\nprint '''\r\n################################################################################\r\n########## Integracja pipeline z smsapi Microservice #2 ########################\r\n################################################################################\r\n'''\r\nprocess_name = '03. Send SMS through a URL.'\r\nfirst_name = in_dict['data'][u'first_name']\r\nphone_number = in_dict['data'][u'phone'][0][u'value']\r\noffer_change = param_dict['data']\r\nSMSAPI_USERNAME = 'api92' # 'lit534'\r\nSMSAPI_PASSWORD = '83328c6b3c7fbccaae8a38b5fa862fdf' #'47539a97dd5769bd9a47619def35f80e'  # NOT A SIMPLE USERNAME PASSWORD\r\nSMSAPI_MESSAGE_TYPE = 'ECO'  # Message types are: ECO,\r\nSMSAPI_TEL_NUM = '48' + str(phone_number)  # 48 - kierunkowy do PL\r\nSMSAPI_MESSAGE = 'Witaj ' + str(first_name)  + ' Twoje zamowienie zmienilo status ' + str(offer_change)  # What you want to pass inside SMS\r\nurl = 'http://api.smsapi.pl/sms.do?username={}&password={}&rfrom={}&to={}&message={}'.format(SMSAPI_USERNAME,\r\n                                                                                                    SMSAPI_PASSWORD,\r\n                                                                                                    SMSAPI_MESSAGE_TYPE,\r\n                                                                                                    SMSAPI_TEL_NUM,\r\n                                                                                                    SMSAPI_MESSAGE)\r\n\r\ndef get_split_settings(process_name, url=None, phrase=None, params=None, rest_data=None):\r\n    split = {'name': process_name,\r\n             'delay_ms': 0,\r\n             'params': {'param_dict': {'data' : param_dict}}}\r\n    if url:\r\n        split['params'].update({'url': url})\r\n    if phrase:\r\n        split['params']['param_dict'].update({'phrase': phrase})\r\n    if params:\r\n        split['params']['param_dict'].update(params)\r\n    if rest_data:\r\n        split['params'].update({'rest_data': [rest_data]})\r\n    return split\r\n\r\n\r\ndef main():\r\n    splits = []\r\n    split = get_split_settings(process_name, url=url, phrase=None, params=None, rest_data=None)\r\n    splits.append(split)\r\n    return splits\r\n\r\n\r\nout_dict = main()\r\nprint out_dict\r\n\r\n"
+    "transformation": "
+    print in_dict
+    print '''
+    Microservice 2 GET person data.
+    '''
+    process_name = 'NAME_OF_YOUR_THIRD_MICROSERVICE'  ##Name of the next process triggered by current Microservice
+    first_name = in_dict['data'][u'first_name']
+    phone_number = in_dict['data'][u'phone'][0][u'value']
+    offer_change = param_dict['data']
+    SMSAPI_USERNAME = 'YOUR_USERNAME'  ## Your SMSAPI username
+    SMSAPI_PASSWORD = 'YOUR_MD5_PASSWORD_HERE'  ## Your SMSAPI MD5 password
+    SMSAPI_MESSAGE_TYPE = 'ECO'  ## Type of your message (for more options go to SMSAPI documentation)
+    SMSAPI_TEL_NUM = '48' + str(phone_number)  ## Your country phone code e.g. 48 for Poland
+    SMSAPI_MESSAGE = 'Hello ' + str(first_name) + ' status of your order has changed ' + str(offer_change)
+    url = 'http://api.smsapi.pl/sms.do?username={}&password={}&rfrom={}&to={}&message={}'.format(SMSAPI_USERNAME,
+                                                                                                 SMSAPI_PASSWORD,
+                                                                                                 SMSAPI_MESSAGE_TYPE,
+                                                                                                 SMSAPI_TEL_NUM,
+                                                                                                 SMSAPI_MESSAGE)
+
+
+    def get_split_settings(process_name, url=None, phrase=None, params=None, rest_data=None):
+        split = {'name': process_name,
+                 'delay_ms': 0,
+                 'params': {'param_dict': {'data': param_dict}}}
+        if url:
+            split['params'].update({'url': url})
+        if phrase:
+            split['params']['param_dict'].update({'phrase': phrase})
+        if params:
+            split['params']['param_dict'].update(params)
+        if rest_data:
+            split['params'].update({'rest_data': [rest_data]})
+        return split
+    
+    
+    def main():
+        splits = []
+        split = get_split_settings(process_name, url=url, phrase=None, params=None, rest_data=None)
+        splits.append(split)
+        return splits
+    
+    
+    out_dict = main()
+    print out_dict"
 }
