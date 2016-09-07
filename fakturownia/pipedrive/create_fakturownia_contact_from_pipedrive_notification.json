@@ -1,0 +1,46 @@
+{
+    "name":"Create Fakturownia Contact from Pipedrive notification",
+    "connector_in":"REST, v4.12",
+    "parameters_in":{
+          "error_codes":[],
+          "headers":{},
+          "high_load":false,
+          "http_method":"GET",
+          "queue_delay_ms":0,
+          "queue_warning_minutes":60,
+          "rest_data":{},
+          "url":"",
+          "url_params":{},
+          "user":{}
+    },
+    "connector_out":"REST, v4.12",
+    "parameters_out":{
+          "error_codes":[],
+          "headers":{},
+          "http_method":"POST",
+          "url":"https://YOUR_DOMAIN.fakturownia.pl/clients.json",
+          "url_params":{
+            "api_token":"API_TOKEN"
+          },
+          "user":{}
+    },
+    "transformation":"""pipedrive_notification = in_dict['data']['current']
+                        pn = pipedrive_notification
+                        out_dict = {
+                            'first_name': pn['first_name'] or pn['name'],
+                            'name': pn['org_name'] if pn['org_name'] else '',
+                            'tax_no': '',
+                            'bank' : '',
+                            'bank_account' : '',
+                            'city' : '',
+                            'country' : '',
+                            'email':     pn['email'][0]['value'],
+                            'last_name':  pn['last_name'] if pn['first_name'] else '',
+                            'person': '',
+                            'post_code' : '',
+                            'phone':    pn['phone'][0]['value'],
+                            'street' : '',
+                            'street_no' : ''
+                        }  
+                         """
+}
