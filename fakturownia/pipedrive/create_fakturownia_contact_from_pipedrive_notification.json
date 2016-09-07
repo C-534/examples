@@ -24,23 +24,5 @@
           },
           "user":{}
     },
-    "transformation":"""pipedrive_notification = in_dict['data']['current']
-                        pn = pipedrive_notification
-                        out_dict = {
-                            'first_name': pn['first_name'] or pn['name'],
-                            'name': pn['org_name'] if pn['org_name'] else '',
-                            'tax_no': '',
-                            'bank' : '',
-                            'bank_account' : '',
-                            'city' : '',
-                            'country' : '',
-                            'email':     pn['email'][0]['value'],
-                            'last_name':  pn['last_name'] if pn['first_name'] else '',
-                            'person': '',
-                            'post_code' : '',
-                            'phone':    pn['phone'][0]['value'],
-                            'street' : '',
-                            'street_no' : ''
-                        }  
-                         """
+    "transformation":"pipedrive_notification = in_dict['data']['current'] \r\npn=pipedrive_notification\r\n\r\nout_dict = {\r\n    'first_name': pn['first_name'] or pn['name'],\r\n 'name': pn['org_name'] if pn['org_name'] else '', \r\n\r\n'tax_no': '',\r\n\r\n                             'bank' : '',\r\n\r\n'bank_account' : '',\r\n\r\n'city' : '',\r\n\r\n'country' : '', \r\n\r\n 'email':     pn['email'][0]['value'],\r\n\r\n'last_name':  pn['last_name'] if pn['first_name'] else '',\r\n\r\n'person': '',\r\n\r\n'post_code' : '',\r\n\r\n'phone':    pn['phone'][0]['value'],\r\n\r\n'street' : '',\r\n\r\n'street_no' : ''}  "
 }
