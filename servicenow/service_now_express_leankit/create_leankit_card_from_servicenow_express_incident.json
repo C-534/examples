@@ -1,0 +1,41 @@
+# When a new Incident is created in ServiceNow Express- create a new Card in Leankit.
+{
+    "name":"Create LeanKit card from ServiceNow Express incident",
+    "connector_in":"REST, v4.13",
+    "parameters_in":{
+        "error_codes":[
+            404,
+            500
+        ],
+        "headers":{},
+        "high_load":false,
+        "http_method":"GET",
+        "queue_delay_ms":0,
+        "queue_warning_minutes":60,
+        "rest_data":{},
+        "url":"",
+        "url_params":{},
+        "user":{}
+    },
+    "connector_out":"Leankit Kanban, v1.6",
+    "parameters_out":{
+        "command":"AddCard",
+        "optional":{
+            "board_id":"YOUR_TARGET_LEANKIT_BOARD_ID",
+            "lane_id":"YOUR_TARGET_LEANKIT_LANE_ID",
+            "position":"0"
+        },
+        "url":"YOUR_LEANKIT_SUBDOMAIN",
+        "user":{
+            "login":"YOUR_LEANKIT_LOGIN",
+            "password":"YOUR_LEANKIT_PASSWORD"
+        }
+    },
+    "transformation":"servicenow_notification = in_dict['data']
+out_dict = {
+    'Title':        servicenow_notification.get('short_description') or u'NO TITLE PROVIDED',
+    'Description':  servicenow_notification.get('description') or u'NO DESCRIPTION PROVIDED',
+    'TypeId':       246277524,
+    'Priority':     0
+}"
+}
